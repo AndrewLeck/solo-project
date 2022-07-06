@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-function EatingDissorder(){
+function SuicideAndDepression(){
  
     return(
         <>
-         <h1>Eating Dissorder </h1>
+         <h1>Suicide & Depression</h1>
             <div>
                 <Link to="/EatingDissorder">
                     <button>Eating Dissorder</button>
@@ -57,4 +57,4 @@ function EatingDissorder(){
     )
 }
 
-export default EatingDissorder;
+export default SuicideAndDepression;

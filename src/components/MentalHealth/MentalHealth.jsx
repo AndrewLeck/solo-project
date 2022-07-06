@@ -16,12 +16,12 @@ function MentalHealth(){
          <h1>Mental Health </h1>
             <div>
                 <Link to="/EatingDissorder">
-                 <button>Eating Dissorder</button>
+                    <button>Eating Dissorder</button>
                 </Link>
                 <Link to="/Addiction">
                     <button> Addiction</button>
                 </Link>
-                <Link to="Suicid&Depression">
+                <Link to="/SuicideAndDepression">
                     <button> Suicide & Depression</button>
                 </Link>
             </div>

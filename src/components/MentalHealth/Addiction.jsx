@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 function Addiction(){
  
     return(
@@ -8,23 +9,27 @@ function Addiction(){
                 <Link to="/EatingDissorder">
                     <button>Eating Dissorder</button>
                 </Link>
-                <button> Addiction</button>
-                <button className='tablink'> Suicide & Depression</button>
+                <Link to="/Addiction">
+                    <button> Addiction</button>
+                </Link>
+                <Link to="/SuicideAndDepression">
+                    <button> Suicide & Depression</button>
+                </Link>
             </div>
             <div>
                 <header> Name </header>
               <ul>
                   <li>
-                      This is where I will map throug my array and append the name
+                      This is where I will map through my array and append the name
                   </li>
                   <li>
-                      This is where I will map throug my array and append the name
+                      This is where I will map through my array and append the name
                   </li>
                   <li>
-                      This is where I will map throug my array and append the name
+                      This is where I will map through my array and append the name
                   </li>
                   <li>
-                      This is where I will map throug my array and append the name
+                      This is where I will map through my array and append the name
                   </li>
               </ul>
             </div>
@@ -32,16 +37,16 @@ function Addiction(){
             <header>Additional Resources</header>
               <ul>
                   <li>
-                      This is where I will map throug my array and append Additional Resources
+                      This is where I will map through my array and append Additional Resources
                   </li>
                   <li>
-                      This is where I will map throug my array and append Additional Resources
+                      This is where I will map through my array and append Additional Resources
                   </li>
                   <li>
-                      This is where I will map throug my array and append Additional Resources
+                      This is where I will map through my array and append Additional Resources
                   </li>
                   <li>
-                      This is where I will map throug my array and append Additional Resources
+                      This is where I will map through my array and append Additional Resources
                   </li>
               </ul>
             </div>

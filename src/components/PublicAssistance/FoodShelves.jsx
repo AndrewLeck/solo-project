@@ -51,7 +51,9 @@ function FoodShelves(){
               </ul>
             </div>
             <div>
-                <button>Go Back</button>
+                <Link to="/PublicAssistance">
+                    <button>Go Back</button>
+                </Link>
             </div>
         </>
     )

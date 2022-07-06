@@ -36,7 +36,7 @@ function Nav() {
               Mental Health
             </Link>
 
-            <Link className="navLink">
+            <Link className="navLink" to="/publicAssistance">
               Public Assistance
             </Link>
 

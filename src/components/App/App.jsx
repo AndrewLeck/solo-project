@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import MentalHealth from '../MentalHealth/MentalHealth';
+import PublicAssistance from '../PublicAssistance/PublicAssistance';
 
 import './App.css';
 
@@ -74,6 +75,13 @@ function App() {
           path="/mentalHealth"
           >
             <MentalHealth />
+          </ProtectedRoute>
+          
+          <ProtectedRoute
+          exact
+          path="/publicAssistance"
+          >
+            <PublicAssistance />
           </ProtectedRoute>
 
           <Route

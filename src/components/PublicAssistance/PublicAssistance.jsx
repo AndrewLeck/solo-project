@@ -1,8 +1,7 @@
-
-function MentalHealth(){
+function PublicAssistance(){
     return(
         <>
-        <h1>Mental Health Page</h1>
+        <h1>Public Assistance Page</h1>
             <div>
                 image will go here
             </div>
@@ -13,4 +12,4 @@ function MentalHealth(){
     )
 }
 
-export default MentalHealth;
+export default PublicAssistance;

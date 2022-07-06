@@ -30,6 +30,8 @@ import FoodShelves from '../PublicAssistance/FoodShelves';
 import HomelessShelters from '../PublicAssistance/HomelessShelters';
 import ClothingOptions from '../PublicAssistance/ClothingOptions';
 import Library from '../EducationalAssistance/Library\'s';
+import PublicSchools from '../EducationalAssistance/PublicSchools';
+
 import './App.css';
 
 function App() {
@@ -152,6 +154,13 @@ function App() {
             path="/Library"
             >
               <Library />
+            </ProtectedRoute>
+
+            <ProtectedRoute
+            exact
+            path="/PublicSchools"
+            >
+              <PublicSchools />
             </ProtectedRoute>
           
           <Route

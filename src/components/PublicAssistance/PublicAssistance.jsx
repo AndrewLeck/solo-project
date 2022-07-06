@@ -21,7 +21,9 @@ function PublicAssistance(){
                 </p>
             </div>
             <div>
-                <button>Go home</button>
+                <Link to="/user">
+                    <button>Go home</button>
+                </Link>
             </div>
         </>
     )

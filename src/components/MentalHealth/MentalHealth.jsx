@@ -1,11 +1,5 @@
 import './MentalHealth.css';
-import {
-    HashRouter as Router,
-    Redirect,
-    Route,
-    Switch,
-  } from 'react-router-dom';
-  import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
   
   
 
@@ -31,7 +25,9 @@ function MentalHealth(){
                 </p>
             </div>
             <div>
-                <button>Go home</button>
+                <Link to="/user">
+                    <button>Go home</button>
+                </Link>
             </div>
         </>
     )

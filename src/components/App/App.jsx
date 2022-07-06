@@ -23,6 +23,7 @@ import MentalHealth from '../MentalHealth/MentalHealth';
 import PublicAssistance from '../PublicAssistance/PublicAssistance';
 import EducationalAssistance from '../EducationalAssistance/EducationalAssistance';
 import GeneralHealth from '../GeneralHealth/GeneralHealth';
+import EatingDissorder from '../MentalHealth/EatingDissorder';
 
 import './App.css';
 
@@ -98,6 +99,13 @@ function App() {
           path="/GeneralHealth"
           >
             <GeneralHealth />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/EatingDissorder"
+          >
+            <EatingDissorder />
           </ProtectedRoute>
 
           <Route

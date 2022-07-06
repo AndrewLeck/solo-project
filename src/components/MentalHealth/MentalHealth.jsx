@@ -1,4 +1,13 @@
 import './MentalHealth.css';
+import {
+    HashRouter as Router,
+    Redirect,
+    Route,
+    Switch,
+  } from 'react-router-dom';
+  import { Link } from 'react-router-dom';
+  
+  
 
 function MentalHealth(){
     // function openTitle(titleName, elmnt, color) {
@@ -24,9 +33,8 @@ function MentalHealth(){
       
     //   // Get the element with id="defaultOpen" and click on it
     // //   document.getElementById("defaultOpen").click();
-    const openEatingDissorders = () => {
-        console.log('Hello eating')
-    }
+  
+     
 
     return(
         <>
@@ -41,7 +49,10 @@ function MentalHealth(){
             <h3> Suicide & Depression </h3>
         </div> */}
             <div>
-                <button className='tablink' onClick={openEatingDissorders}> Eating Dissorder</button>
+                <Link to="/EatingDissorder" >
+                 <button className='tablink'>Eating Dissorder</button>
+                </Link>
+               
                 <button className='tablink'> Addiction</button>
                 <button className='tablink'> Suicide & Depression</button>
             </div>

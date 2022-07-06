@@ -51,7 +51,9 @@ function EatingDissorder(){
               </ul>
             </div>
             <div>
-                <button>Go Back</button>
+                <Link to='/MentalHealth'>
+                    <button>Go Back</button>
+                </Link>
             </div>
         </>
     )

@@ -34,6 +34,7 @@ import PublicSchools from '../EducationalAssistance/PublicSchools';
 import TutoringServices from '../EducationalAssistance/TutoringServices';
 import DrAndHospital from '../GeneralHealth/Dr.AndHospital';
 import SexualEducation from '../GeneralHealth/SexualEducation';
+import Covid from '../GeneralHealth/Covid-19';
 
 import './App.css';
 
@@ -183,6 +184,13 @@ function App() {
             path="/SexualEducation"
             >
               <SexualEducation />
+            </ProtectedRoute>
+
+            <ProtectedRoute
+            exact
+            path="/Covid-19"
+            >
+              <Covid />
             </ProtectedRoute>
           
           

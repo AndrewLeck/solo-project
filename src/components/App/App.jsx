@@ -32,6 +32,7 @@ import ClothingOptions from '../PublicAssistance/ClothingOptions';
 import Library from '../EducationalAssistance/Library\'s';
 import PublicSchools from '../EducationalAssistance/PublicSchools';
 import TutoringServices from '../EducationalAssistance/TutoringServices';
+import DrAndHospital from '../GeneralHealth/Dr.AndHospital';
 
 import './App.css';
 
@@ -168,6 +169,12 @@ function App() {
             path="/TutoringServices"
             >
               <TutoringServices />
+            </ProtectedRoute>
+            <ProtectedRoute
+            exact
+            path="/DrAndHospital"
+            >
+              <DrAndHospital />
             </ProtectedRoute>
           
           <Route

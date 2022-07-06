@@ -5,7 +5,7 @@ function GeneralHealth(){
         <>
         <h1>General Health Page</h1>
                 <div>
-                    <Link to="/Dr.AndHospital">
+                    <Link to="/DrAndHospital">
                         <button> Dr./Hospital </button>
                     </Link>
                     <Link to="/SexualEducation">

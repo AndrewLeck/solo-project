@@ -7,8 +7,19 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
+      <h2>Welcome, {user.username}! How can I help you today?</h2>
+      <input/>
+      <button>Search</button>
+
+      {/* <p>Your ID is: {user.id}</p> */}
+      <div>
+          <title> Fact of the day </title>
+          <p>(API end point will go here to generate a random fact per day)</p>
+      </div>
+      <div>
+          <button>Give Feedback</button>
+      </div>
+      
       <LogOutButton className="btn" />
     </div>
   );

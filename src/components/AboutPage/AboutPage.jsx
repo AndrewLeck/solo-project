@@ -10,6 +10,7 @@ function AboutPage() {
     <div className="container">
       <div>
         <p>This about page is for anyone to read!</p>
+        <p> Resourceful was created to help provide equal oppourtunities for all</p>
       </div>
     </div>
   );

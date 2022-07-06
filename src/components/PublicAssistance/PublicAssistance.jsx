@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 function PublicAssistance(){
     return(
         <>
-            <h1>Public Assistance Page</h1>
+            <h1>Public Assistance</h1>
                 <div>
                     <Link to="/FoodShelves">
                         <button> Food Shelves </button>

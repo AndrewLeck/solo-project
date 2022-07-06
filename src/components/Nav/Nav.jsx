@@ -40,7 +40,7 @@ function Nav() {
               Public Assistance
             </Link>
 
-            <Link className="navLink">
+            <Link className="navLink" to="/EducationalAssistance">
               Educational Assistance
             </Link>
 

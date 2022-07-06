@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import MentalHealth from '../MentalHealth/MentalHealth';
 import PublicAssistance from '../PublicAssistance/PublicAssistance';
+import EducationalAssistance from '../EducationalAssistance/EducationalAssistance';
 
 import './App.css';
 
@@ -82,6 +83,13 @@ function App() {
           path="/publicAssistance"
           >
             <PublicAssistance />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/EducationalAssistance"
+          >
+            <EducationalAssistance />
           </ProtectedRoute>
 
           <Route

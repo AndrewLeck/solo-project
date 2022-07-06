@@ -74,14 +74,14 @@ function App() {
 
           <ProtectedRoute
           exact
-          path="/mentalHealth"
+          path="/MentalHealth"
           >
             <MentalHealth />
           </ProtectedRoute>
           
           <ProtectedRoute
           exact
-          path="/publicAssistance"
+          path="/PublicAssistance"
           >
             <PublicAssistance />
           </ProtectedRoute>

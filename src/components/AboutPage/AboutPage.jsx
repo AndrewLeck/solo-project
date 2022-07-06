@@ -8,6 +8,7 @@ import React from 'react';
 function AboutPage() {
   return (
     <div className="container">
+      <h1> About Page </h1>
       <div>
         <p>This about page is for anyone to read!</p>
         <p> Resourceful was created to help provide equal oppourtunities for all</p>

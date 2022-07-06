@@ -32,11 +32,11 @@ function Nav() {
               Info Page
             </Link>
 
-            <Link className="navLink" to="/mentalHealth">
+            <Link className="navLink" to="/MentalHealth">
               Mental Health
             </Link>
 
-            <Link className="navLink" to="/publicAssistance">
+            <Link className="navLink" to="/PublicAssistance">
               Public Assistance
             </Link>
 

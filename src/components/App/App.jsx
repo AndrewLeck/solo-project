@@ -29,6 +29,7 @@ import SuicideAndDepression from '../MentalHealth/Suicide&Depression';
 import FoodShelves from '../PublicAssistance/FoodShelves';
 import HomelessShelters from '../PublicAssistance/HomelessShelters';
 import ClothingOptions from '../PublicAssistance/ClothingOptions';
+import Library from '../EducationalAssistance/Library\'s';
 import './App.css';
 
 function App() {
@@ -145,6 +146,12 @@ function App() {
             path="/ClothingOptions"
             >
               <ClothingOptions />
+            </ProtectedRoute>
+            <ProtectedRoute
+            exact
+            path="/Library"
+            >
+              <Library />
             </ProtectedRoute>
           
           <Route

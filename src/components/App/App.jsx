@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import MentalHealth from '../MentalHealth/MentalHealth';
 
 import './App.css';
 
@@ -68,6 +69,13 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
+          <ProtectedRoute
+          exact
+          path="/mentalHealth"
+          >
+            <MentalHealth />
+          </ProtectedRoute>
+
           <Route
             exact
             path="/login"
@@ -107,6 +115,7 @@ function App() {
               :
               // Otherwise, show the Landing page
               <LandingPage />
+
             }
           </Route>
 

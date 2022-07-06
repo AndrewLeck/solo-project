@@ -1,11 +1,14 @@
-function EatingDissorder(){
+import { Link } from 'react-router-dom';
+function Addiction(){
  
     return(
         <>
-         <h1>Eating Dissorder </h1>
+         <h1>Addiction </h1>
             <div>
-                <button className='tablink'> Eating Dissorder</button>
-                <button className='tablink'> Addiction</button>
+                <Link to="/EatingDissorder">
+                    <button>Eating Dissorder</button>
+                </Link>
+                <button> Addiction</button>
                 <button className='tablink'> Suicide & Depression</button>
             </div>
             <div>
@@ -49,4 +52,4 @@ function EatingDissorder(){
     )
 }
 
-export default EatingDissorder;
+export default Addiction;

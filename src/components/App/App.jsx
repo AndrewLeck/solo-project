@@ -24,7 +24,7 @@ import PublicAssistance from '../PublicAssistance/PublicAssistance';
 import EducationalAssistance from '../EducationalAssistance/EducationalAssistance';
 import GeneralHealth from '../GeneralHealth/GeneralHealth';
 import EatingDissorder from '../MentalHealth/EatingDissorder';
-
+import Addiction from '../MentalHealth/Addiction';
 import './App.css';
 
 function App() {
@@ -108,6 +108,13 @@ function App() {
             <EatingDissorder />
           </ProtectedRoute>
 
+            <ProtectedRoute
+            exact
+            path='/Addiction'
+            >
+              <Addiction />
+            </ProtectedRoute>
+          
           <Route
             exact
             path="/login"

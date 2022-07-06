@@ -44,7 +44,7 @@ function Nav() {
               Educational Assistance
             </Link>
 
-            <Link className="navLink">
+            <Link className="navLink" to="/GeneralHealth">
               General Health
             </Link>
 

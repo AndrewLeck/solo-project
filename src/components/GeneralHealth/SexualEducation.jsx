@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-function DrAndHospital(){
+function SexualEducation(){
  
     return(
         <>
-         <h1>Dr./Hospital</h1>
+         <h1>Sexual Education</h1>
                 <div>
                     <Link to="/DrAndHospital">
                         <button> Dr./Hospital </button>
@@ -59,4 +59,4 @@ function DrAndHospital(){
     )
 }
 
-export default DrAndHospital;
+export default SexualEducation;

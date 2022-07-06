@@ -33,6 +33,7 @@ import Library from '../EducationalAssistance/Library\'s';
 import PublicSchools from '../EducationalAssistance/PublicSchools';
 import TutoringServices from '../EducationalAssistance/TutoringServices';
 import DrAndHospital from '../GeneralHealth/Dr.AndHospital';
+import SexualEducation from '../GeneralHealth/SexualEducation';
 
 import './App.css';
 
@@ -176,6 +177,14 @@ function App() {
             >
               <DrAndHospital />
             </ProtectedRoute>
+            
+            <ProtectedRoute
+            exact
+            path="/SexualEducation"
+            >
+              <SexualEducation />
+            </ProtectedRoute>
+          
           
           <Route
             exact

@@ -8,19 +8,14 @@ const [message, setMessage] = useState('');
 const [name, setName] = useState('');
 const dispatch = useDispatch();
 
-
 const sendMessageToServer = (event) => {
     event.preventDefault();
-    // console.log('message sent')
-    // console.log('what is my email:', email)
-    // console.log('What is my Message:',message)
     dispatch({
         type:'ADD_MESSAGE',
         payload:{
             email,
             message,
             name
-            
         }
     })
 };
@@ -30,11 +25,13 @@ const sendMessageToServer = (event) => {
             <h1>Want us to add anything? Give us your suggestion down below.</h1>
                 <form onSubmit={sendMessageToServer}>
                     <div>
+                        <span>Name:</span>
                         <input
                         onChange={(event) => setName(event.target.value)}
                         type="text" 
                         placeholder="Name" 
                         />
+                        <span>Email:</span>
                         <input
                         onChange={(event) => setEmail(event.target.value)}
                         type="text" 

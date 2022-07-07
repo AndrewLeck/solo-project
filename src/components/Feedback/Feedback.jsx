@@ -5,20 +5,22 @@ function Feedback(){
 
 const [email, setEmail] = useState('');
 const [message, setMessage] = useState('');
+const [name, setName] = useState('');
 const dispatch = useDispatch();
-const user = useSelector(store => store.user)
+
 
 const sendMessageToServer = (event) => {
     event.preventDefault();
-    console.log('message sent')
-    console.log('what is my email:', email)
-    console.log('What is my Message:',message)
+    // console.log('message sent')
+    // console.log('what is my email:', email)
+    // console.log('What is my Message:',message)
     dispatch({
         type:'ADD_MESSAGE',
         payload:{
             email,
             message,
-            user: user.username
+            name
+            
         }
     })
 };
@@ -28,6 +30,11 @@ const sendMessageToServer = (event) => {
             <h1>Want us to add anything? Give us your suggestion down below.</h1>
                 <form onSubmit={sendMessageToServer}>
                     <div>
+                        <input
+                        onChange={(event) => setName(event.target.value)}
+                        type="text" 
+                        placeholder="Name" 
+                        />
                         <input
                         onChange={(event) => setEmail(event.target.value)}
                         type="text" 

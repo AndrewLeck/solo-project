@@ -35,6 +35,7 @@ import TutoringServices from '../EducationalAssistance/TutoringServices';
 import DrAndHospital from '../GeneralHealth/Dr.AndHospital';
 import SexualEducation from '../GeneralHealth/SexualEducation';
 import Covid from '../GeneralHealth/Covid-19';
+import Feedback from '../Feedback/Feedback';
 
 import './App.css';
 
@@ -191,6 +192,13 @@ function App() {
             path="/Covid-19"
             >
               <Covid />
+            </ProtectedRoute>
+
+            <ProtectedRoute
+            exact
+            path="/Feedback"
+            >
+              <Feedback />
             </ProtectedRoute>
           
           

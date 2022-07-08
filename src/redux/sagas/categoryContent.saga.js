@@ -1,12 +1,15 @@
 import axios from 'axios';
-import { takeLatest } from 'redux-saga/effects';
+import { takeLatest, put } from 'redux-saga/effects';
 
 //this function takis in the action call "FETCH_CATEGORY_CONTENT" and sends a GET request to the server
 function* fetchCategoryContent(action){
     console.log('what is this:', action);
     try{
-        const res = yield axios.get('/api/categoryContent', action) 
-
+        const res = yield axios.get('/api/categoryContent') 
+        yield put({
+            type:'SET_CATEGORY_CONTENT',
+            payload: res.data
+        })
     }
     catch(err){
         console.log('Failed to GET category content in sagas', err);

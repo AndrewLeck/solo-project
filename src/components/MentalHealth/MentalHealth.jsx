@@ -5,6 +5,7 @@ import './MentalHealth.css';
 
 
 function MentalHealth(){
+    const category = useSelector((store) => store.categoryContent);
     const dispatch = useDispatch();
 
   useEffect(() =>{
@@ -16,7 +17,7 @@ function MentalHealth(){
 
     return(
         <>
-         <h1>Mental Health </h1>
+         <h1> {category[0] && category[0].name} </h1>
             <div>
                 <Link to="/EatingDissorder">
                     <button>Eating Dissorder</button>
@@ -30,7 +31,7 @@ function MentalHealth(){
             </div>
             <div>
                 <p>
-                image will go here
+                {category[0] && category[0].home_page_content}
                 </p>
             </div>
             <div>

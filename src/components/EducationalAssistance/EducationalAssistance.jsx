@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux'; 
 
 function EducationalAssistance(){
+    const dispatch = useDispatch();
+    const category = useSelector((store) => store.categoryContent);
+    useEffect(() =>{
+      dispatch({
+          type: "FETCH_CATEGORY_CONTENT"
+      })
+    },[])
     return(
         <>
 
-        <h1>Educational Assistance Page</h1>
+        <h1>{category[2] && category[2].name}</h1>
                 <div>
                     <Link to="/Library">
                         <button> Library's </button>
@@ -18,7 +27,7 @@ function EducationalAssistance(){
                 </div>
             <div>
                 <p>
-                    image will go here
+                    {category[2] && category[2].home_page_content}
                 </p>
             </div>
             <div>

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux'; 
 
 function EducationalAssistance(){
+
     const dispatch = useDispatch();
     const category = useSelector((store) => store.categoryContent);
     useEffect(() =>{
@@ -10,6 +11,7 @@ function EducationalAssistance(){
           type: "FETCH_CATEGORY_CONTENT"
       })
     },[])
+    
     return(
         <>
 

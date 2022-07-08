@@ -1,13 +1,13 @@
-// const messageReducer = (state = {}, action) => {
-//     switch (action.type) {
-//       case 'ADD_MESSAGE':
-//         return action.payload;
-//       default:
-//         return state;
-//     }
-//   };
+const messageReducer = (state = {}, action) => {
+    switch (action.type) {
+      case 'ADD_MESSAGE':
+        return action.payload;
+      default:
+        return state;
+    }
+  };
   
-//   // user will be on the redux state at:
-//   // state.user
-//   export default messageReducer;
+  // user will be on the redux state at:
+  // state.user
+  export default messageReducer;
   

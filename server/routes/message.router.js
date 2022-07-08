@@ -2,18 +2,9 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
-router.get('/', (req, res) => {
-  // GET route code here
-});
-
-/**
- * POST route template
- */
+// This will post the users message from the review from to the database where
+// The developers will have access to read.
 router.post('/', (req, res) => {
-  // POST route code here
     const queryText= `
 INSERT INTO "messages" 
 	("name", "email", "message")

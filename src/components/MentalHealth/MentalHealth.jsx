@@ -1,10 +1,19 @@
-import './MentalHealth.css';
 import { Link } from 'react-router-dom';
-  
-  
+import { useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux';  
+import './MentalHealth.css';
+
 
 function MentalHealth(){
-     
+    const dispatch = useDispatch();
+
+  useEffect(() =>{
+    dispatch({
+        type: "FETCH_CATEGORY_CONTENT"
+    })
+  },[])
+    
+
     return(
         <>
          <h1>Mental Health </h1>

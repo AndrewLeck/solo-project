@@ -18,6 +18,10 @@ const sendMessageToServer = (event) => {
             name
         }
     })
+    //This will clear the input fields on submit of the form( but it does not work yet need to fix later)
+    setName('');
+    setEmail('');
+    setMessage('');
 };
 
     return(
@@ -43,7 +47,7 @@ const sendMessageToServer = (event) => {
                                 {/* will have to expand this imput box to make it bigger */}
                                 <input 
                                 onChange={(event) => setMessage(event.target.value)}
-                                tpye="text" 
+                                type="text" 
                                 placeholder="Users will be able to type messages Here!"
                                  />
                             </p>

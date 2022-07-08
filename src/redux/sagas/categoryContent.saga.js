@@ -2,8 +2,7 @@ import axios from 'axios';
 import { takeLatest, put } from 'redux-saga/effects';
 
 //this function takis in the action call "FETCH_CATEGORY_CONTENT" and sends a GET request to the server
-function* fetchCategoryContent(action){
-    console.log('what is this:', action);
+function* fetchCategoryContent(){
     try{
         const res = yield axios.get('/api/categoryContent') 
         yield put({

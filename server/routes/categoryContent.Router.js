@@ -4,17 +4,11 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
+    
   const queryText=`
   SELECT * FROM "categoryId";
   `;
   
-//   const queryParams = [
-//       req.body.name,
-//       req.body.home_page_content
-//   ]
-
-  console.log('What is this:', queryText);
-
   pool.query(queryText)
   .then((results) => {
       console.log('We got the data!', results.rows)

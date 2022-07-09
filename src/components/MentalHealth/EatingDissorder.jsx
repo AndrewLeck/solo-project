@@ -46,9 +46,15 @@ function EatingDissorder(){
                  {resources.map((resource) => {
                      return(
                          <li key={resource.id}>
-                            Address: {resource.location}
-                            Phone:{resource.phone}
-                            Link:{resource.link}
+                            <div>
+                                Address: {resource.location}
+                            </div>
+                            <div>
+                                 Phone: {resource.phone}
+                            </div>                
+                            <div>
+                                link: <a href={resource.link} target="_blank">{resource.link}</a>/
+                            </div>
                          </li>
                      )
                  })}

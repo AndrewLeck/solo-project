@@ -43,6 +43,7 @@ function App() {
   const dispatch = useDispatch();
 
   const user = useSelector(store => store.user);
+ 
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
@@ -200,7 +201,6 @@ function App() {
             >
               <Feedback />
             </ProtectedRoute>
-          
           
           <Route
             exact

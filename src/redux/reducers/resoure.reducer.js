@@ -1,4 +1,4 @@
-const resourceReducer = (state = {}, action) => {
+const resourceReducer = (state = [], action) => {
     switch (action.type) {
       case 'SET_RESOURCES':
         return action.payload;

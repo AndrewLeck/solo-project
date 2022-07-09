@@ -30,28 +30,29 @@ function EatingDissorder(){
             <div>
                 <header> Name </header>
               <ul>
-                  
-                  <li>
-                     
-                  </li>
+                  {resources.map((resource) => {
+                      return(
+                          <li key={resource.id}>
+                              {resource.name}
+                          </li>
+                      )
+                  })}
                 
               </ul>
             </div>
             <div>
             <header>Additional Resources</header>
               <ul>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
+                 {resources.map((resource) => {
+                     return(
+                         <li key={resource.id}>
+                            Address: {resource.location}
+                            Phone:{resource.phone}
+                            Link:{resource.link}
+                         </li>
+                     )
+                 })}
+                  
               </ul>
             </div>
             <div>

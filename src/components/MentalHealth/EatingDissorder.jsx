@@ -1,7 +1,18 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux'; 
 
 function EatingDissorder(){
- 
+
+ const resources = useSelector((store) => store.resources);
+ const dispatch = useDispatch();
+ // on page load run this action call (FETCH_RESOURCES)
+ useEffect(() =>{
+    dispatch({
+        type: "FETCH_RESOURCES"
+    })
+  },[])
+
     return(
         <>
          <h1>Eating Dissorder </h1>
@@ -19,18 +30,11 @@ function EatingDissorder(){
             <div>
                 <header> Name </header>
               <ul>
+                  
                   <li>
-                      This is where I will map through my array and append the name
+                     
                   </li>
-                  <li>
-                      This is where I will map through my array and append the name
-                  </li>
-                  <li>
-                      This is where I will map through my array and append the name
-                  </li>
-                  <li>
-                      This is where I will map through my array and append the name
-                  </li>
+                
               </ul>
             </div>
             <div>

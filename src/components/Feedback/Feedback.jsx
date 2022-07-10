@@ -9,6 +9,7 @@ const [name, setName] = useState('');
 const dispatch = useDispatch();
 
 const sendMessageToServer = (event) => {
+    
     event.preventDefault();
     dispatch({
         type:'ADD_MESSAGE',
@@ -19,9 +20,7 @@ const sendMessageToServer = (event) => {
         }
     })
     //This will clear the input fields on submit of the form( but it does not work yet need to fix later)
-    setName('');
-    setEmail('');
-    setMessage('');
+    event.target.reset();
 };
 
     return(

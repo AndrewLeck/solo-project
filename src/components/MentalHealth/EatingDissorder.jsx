@@ -6,6 +6,7 @@ function EatingDissorder(){
 
  const resources = useSelector((store) => store.resources);
  const dispatch = useDispatch();
+ 
  // on page load run this action call (FETCH_RESOURCES)
  useEffect(() =>{
     dispatch({
@@ -53,7 +54,7 @@ function EatingDissorder(){
                                  Phone: {resource.phone}
                             </div>                
                             <div>
-                                link: <a href={resource.link} target="_blank">{resource.link}</a>/
+                                link: <a href={resource.link} target="_blank">{resource.link}</a>
                             </div>
                          </li>
                      )

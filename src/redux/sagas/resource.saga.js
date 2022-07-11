@@ -12,12 +12,11 @@ function* fetchResource(){
     catch(err){
         console.error('Failed to GET resources in sagas', err)
     }
-       
-
 }
 
+
 function* resourceSaga(){
-    yield takeLatest('FETCH_RESOURCES', fetchResource)
+    yield takeLatest('FETCH_RESOURCES', fetchResource)  
 }
 
 export default resourceSaga;

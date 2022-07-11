@@ -31,6 +31,15 @@ function Addiction(){
             <div>
                 <header> Name </header>
               <ul>
+                  {resources.map((resoure) =>{
+                   if( resoure.sub_category_id === 2){
+                       return(
+                           <li key={resource.id}>
+                               {resources.name}
+                           </li>
+                       )
+                   }   
+                  })}
                   
               </ul>
             </div>

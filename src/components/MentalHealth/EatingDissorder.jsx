@@ -32,11 +32,13 @@ function EatingDissorder(){
                 <header> Name </header>
               <ul>
                   {resources.map((resource) => {
-                      return(
-                          <li key={resource.id}>
-                              {resource.name}
-                          </li>
-                      )
+                      if( resource.sub_category_id === 1){
+                        return(
+                            <li key={resource.id}>
+                                {resource.name}
+                            </li>
+                        )
+                      } 
                   })}
                 
               </ul>
@@ -45,19 +47,22 @@ function EatingDissorder(){
             <header>Additional Resources</header>
               <ul>
                  {resources.map((resource) => {
-                     return(
-                         <li key={resource.id}>
-                            <div>
-                                Address: {resource.location}
-                            </div>
-                            <div>
-                                 Phone: {resource.phone}
-                            </div>                
-                            <div>
-                                link: <a href={resource.link} target="_blank">{resource.link}</a>
-                            </div>
-                         </li>
-                     )
+                     if( resource.sub_category_id === 1){
+                        return(
+                            <li key={resource.id}>
+                               <div>
+                                   Address: {resource.location}
+                               </div>
+                               <div>
+                                    Phone: {resource.phone}
+                               </div>                
+                               <div>
+                                   link: <a href={resource.link} target="_blank">{resource.link}</a>
+                               </div>
+                            </li>
+                        )
+
+                     }
                  })}
                   
               </ul>

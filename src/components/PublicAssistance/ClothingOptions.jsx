@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 
 function ClothingOptions(){
- 
+
+    const resources = useSelector((store) => store.resources);
+    const dispatch = useDispatch();
+
+    // on page load run this action call (FETCH_RESOURCES)
+    useEffect(() =>{
+        dispatch({
+            type: "FETCH_RESOURCES"
+        })
+      },[])
+
     return(
         <>
          <h1>Clothing Options</h1>
@@ -19,18 +31,7 @@ function ClothingOptions(){
             <div>
                 <header> Name </header>
               <ul>
-                  <li>
-                      This is where I will map through my array and append the name
-                  </li>
-                  <li>
-                      This is where I will map through my array and append the name
-                  </li>
-                  <li>
-                      This is where I will map through my array and append the name
-                  </li>
-                  <li>
-                      This is where I will map through my array and append the name
-                  </li>
+                  
               </ul>
             </div>
             <div>

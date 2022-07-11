@@ -40,7 +40,6 @@ function Addiction(){
                         )
                       } 
                   })}
-                  
               </ul>
             </div>
             <div>

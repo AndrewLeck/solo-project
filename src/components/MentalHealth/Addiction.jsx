@@ -31,14 +31,14 @@ function Addiction(){
             <div>
                 <header> Name </header>
               <ul>
-                  {resources.map((resoure) =>{
-                   if( resoure.sub_category_id === 2){
-                       return(
-                           <li key={resource.id}>
-                               {resources.name}
-                           </li>
-                       )
-                   }   
+              {resources.map((resource) => {
+                      if( resource.sub_category_id === 2){
+                        return(
+                            <li key={resource.id}>
+                                {resource.name}
+                            </li>
+                        )
+                      } 
                   })}
                   
               </ul>
@@ -46,7 +46,23 @@ function Addiction(){
             <div>
             <header>Additional Resources</header>
               <ul>
-                 
+              {resources.map((resource) => {
+                     if( resource.sub_category_id === 2){
+                        return(
+                            <li key={resource.id}>
+                               <div>
+                                   Address: {resource.location}
+                               </div>
+                               <div>
+                                    Phone: {resource.phone}
+                               </div>                
+                               <div>
+                                   link: <a href={resource.link} target="_blank">{resource.link}</a>
+                               </div>
+                            </li>
+                        )
+                     }
+                 })}
               </ul>
             </div>
             <div>

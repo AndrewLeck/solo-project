@@ -31,24 +31,37 @@ function ClothingOptions(){
             <div>
                 <header> Name </header>
               <ul>
-                  
+              {resources.map((resource) => {
+                      if( resource.sub_category_id === 6){
+                        return(
+                            <li key={resource.id}>
+                                {resource.name}
+                            </li>
+                        )
+                      } 
+                  })}
               </ul>
             </div>
             <div>
             <header>Additional Resources</header>
               <ul>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
-                  <li>
-                      This is where I will map through my array and append Additional Resources
-                  </li>
+              {resources.map((resource) => {
+                     if( resource.sub_category_id === 6){
+                        return(
+                            <li key={resource.id}>
+                               <div>
+                                   Address: {resource.location}
+                               </div>
+                               <div>
+                                    Phone: {resource.phone}
+                               </div>                
+                               <div>
+                                   link: <a href={resource.link} target="_blank">{resource.link}</a>
+                               </div>
+                            </li>
+                        )
+                     }
+                 })}
               </ul>
             </div>
             <div>

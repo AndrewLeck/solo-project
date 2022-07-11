@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
+import './Feedback.css'
 function Feedback(){
 
 const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ const sendMessageToServer = (event) => {
         <>
             <h1>Want us to add anything? Give us your suggestion down below.</h1>
                 <form onSubmit={sendMessageToServer}>
-                    <div>
+                    <div className='textInput'>
                         <span>Name:</span>
                         <input
                         onChange={(event) => setName(event.target.value)}
@@ -42,16 +43,19 @@ const sendMessageToServer = (event) => {
                         />
                     </div>
                         <header>Message:</header>
+                        <div>   
                             <p>
                                 {/* will have to expand this imput box to make it bigger */}
-                                <input 
+                                <textarea 
                                 onChange={(event) => setMessage(event.target.value)}
                                 type="text" 
                                 placeholder="Users will be able to type messages Here!"
                                  />
                             </p>
+                        </div>
                             <div>
                                 <input 
+                                className='textInput'
                                 type="submit"
                                 />
                             </div>

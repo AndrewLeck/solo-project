@@ -100,12 +100,14 @@ function EatingDissorder(){
       
       (async () => {
 
+
         const { value: formValues } = await Swal.fire({
           title: 'Add New Resource',
-          html: `<input placeholder="Name" id="swal-input1" class="swal2-input" type='text'>` +
-                `<input placeholder="Address" id="swal-input2" class="swal2-input" type='text'>` +
-                `<input placeholder="Phone Number" id="swal-input3" class="swal2-input" type='number'>` +
-                `<input placeholder="Website Link" id="swal-input4" class="swal2-input" type='url'>`,
+          html: `<input          id="swal-input1" class="swal2-input" type='select'>` +
+                `<input placeholder="Name"         id="swal-input2" class="swal2-input" type='text'>` +
+                `<input placeholder="Address"      id="swal-input3" class="swal2-input" type='text'>` +
+                `<input placeholder="Phone Number" id="swal-input4" class="swal2-input" type='text'>` +
+                `<input placeholder="Website Link" id="swal-input5" class="swal2-input" type='url'>`,
             showCancelButton: true,
             cancelButtonColor: 'red',
             //figure out later after you get post to work. if cant figure ut out get it removed not that serious
@@ -118,17 +120,21 @@ function EatingDissorder(){
             //         )
             //     }  
             // }),
+    
         preConfirm: () =>{
                     return [
                         document.getElementById('swal-input1').value,
                         document.getElementById('swal-input2').value,
                         document.getElementById('swal-input3').value,
                         document.getElementById('swal-input4').value,
+                        document.getElementById('swal-input5').value,
                     ]
                 },
             })
         
         if (formValues) {
+            console.log('what is formvalues', formValues)
+
           Swal.fire({
                title: JSON.stringify(formValues),
                showCancelButton: true,
@@ -136,6 +142,7 @@ function EatingDissorder(){
                cancelButtonColor: '#d33',
                confirmButtonText: 'Add New Resource'
             }).then((result) => {
+                console.log('what is result', result)
                 if( result.isConfirmed){
                     Swal.fire(
                         'Success!',
@@ -145,10 +152,10 @@ function EatingDissorder(){
                         dispatch({
                             type:'ADD_NEW_RESOURCES',
                             payload:{
-                                name: document.getElementById('swal-input1').value,
-                                location: document.getElementById('swal-input2').value ,
-                                phone: document.getElementById('swal-input3').value,
-                                link: document.getElementById('swal-input4').value
+                                name: formValues[1],
+                                location: formValues[2],
+                                phone: formValues[3],
+                                link: formValues[4]
                             }
                         })
                     })

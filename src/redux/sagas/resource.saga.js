@@ -14,9 +14,22 @@ function* fetchResource(){
     }
 }
 
+function* addNewResource(action){
+try{
+        const res = yield axios.post('/api/resource', action.payload)
+        yield put({
+            type:'FETCH_RESOURCES'
+        })
+    }
+catch(error){
+        console.error('Failed to GET resources in sagas', error)
+    }
+}
+
 
 function* resourceSaga(){
-    yield takeLatest('FETCH_RESOURCES', fetchResource)  
+    yield takeLatest('FETCH_RESOURCES', fetchResource) 
+    yield takeLatest('ADD_NEW_RESOURCES', addNewResource) 
 }
 
 export default resourceSaga;

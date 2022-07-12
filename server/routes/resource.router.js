@@ -21,5 +21,24 @@ router.get('/', (req, res) => {
 
 });
 
+router.post('/', (req, res) => {
+  const sqlQuery = `
+INSERT INTO "resources" 
+	("name", "location", "phone", "link", "sub_category_id")
+VALUES
+	($1, $2, $3, $4, $5);
+  `;
+
+  const queryParams = [
+    req.body.name,
+    req.body.location,
+    req.body.phone,
+    req.body.link,
+    req.body.sub_category_id
+  ]
+
+console.log('what POSTING?', queryParams)
+
+});
 
 module.exports = router;

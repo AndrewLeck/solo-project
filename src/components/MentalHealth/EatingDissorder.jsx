@@ -4,11 +4,13 @@ import { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux'; 
 import Swal from 'sweetalert2';
 import './EatingDissorder.css';
+
+let editID;
 function EatingDissorder(){
 
  const resources = useSelector((store) => store.resources);
  const dispatch = useDispatch();
- const [itemsToEdit, setItemsToEdit] = useState('')
+ const [itemsToEdit, setItemsToEdit] = useState()
  
  // on page load run this action call (FETCH_RESOURCES)
  useEffect(() =>{
@@ -57,11 +59,11 @@ function EatingDissorder(){
 
 
       
-     Swal.getInput({
-         name: resources[0].name,
-         location: resources[0].location,
+    //  Swal.getInput({
+    //      name: resources[0].name,
+    //      location: resources[0].location,
          
-     })
+    //  })
 
     //   Swal.fire({
     //     title: 'Edit this Row',
@@ -99,17 +101,34 @@ function EatingDissorder(){
   const addNewResource = () => {
       
       (async () => {
-
-
-        const { value: formValues } = await Swal.fire({
+        const { value: formValues, id: select } = await Swal.fire({
           title: 'Add New Resource',
-          html: `<input          id="swal-input1" class="swal2-input" type='select'>` +
-                `<input placeholder="Name"         id="swal-input2" class="swal2-input" type='text'>` +
-                `<input placeholder="Address"      id="swal-input3" class="swal2-input" type='text'>` +
-                `<input placeholder="Phone Number" id="swal-input4" class="swal2-input" type='text'>` +
-                `<input placeholder="Website Link" id="swal-input5" class="swal2-input" type='url'>`,
+          html: 
+                `<input placeholder="Name"         id="swal-input1" class="swal2-input" type='text'>` +
+                `<input placeholder="Address"      id="swal-input2" class="swal2-input" type='text'>` +
+                `<input placeholder="Phone Number" id="swal-input3" class="swal2-input" type='text'>` +
+                `<input placeholder="Website Link" id="swal-input4" class="swal2-input" type='url'>`,
             showCancelButton: true,
             cancelButtonColor: 'red',
+            input: 'select',
+            inputOptions:{
+              'Eating Dissorder': {
+                  1: 'Eating Dissorder',
+                  2: 'Addiction',
+                  3: 'Suicide &  Depression',
+              }
+            },
+            inputPlaceholder:'Select where to add',
+            inputValue: 'id',
+            inputValidator: (id) => {
+                if(id){
+                 editID = id
+                 console.log('What is editID', editID)
+                console.log('you chose', id)
+                }
+                console.log('state is:', itemsToEdit)
+                
+            },
             //figure out later after you get post to work. if cant figure ut out get it removed not that serious
             // .then((result) => {
             //     if (result.dismiss ===  Swal.DismissReason.cancel){
@@ -120,6 +139,8 @@ function EatingDissorder(){
             //         )
             //     }  
             // }),
+
+            
     
         preConfirm: () =>{
                     return [
@@ -127,7 +148,7 @@ function EatingDissorder(){
                         document.getElementById('swal-input2').value,
                         document.getElementById('swal-input3').value,
                         document.getElementById('swal-input4').value,
-                        document.getElementById('swal-input5').value,
+                        
                     ]
                 },
             })
@@ -152,10 +173,11 @@ function EatingDissorder(){
                         dispatch({
                             type:'ADD_NEW_RESOURCES',
                             payload:{
-                                name: formValues[1],
-                                location: formValues[2],
-                                phone: formValues[3],
-                                link: formValues[4]
+                                name: formValues[0],
+                                location: formValues[1],
+                                phone: formValues[2],
+                                link: formValues[3],
+                                sub_category_id: editID
                             }
                         })
                     })

@@ -39,6 +39,14 @@ VALUES
 
 console.log('what POSTING?', queryParams)
 
+pool.query(sqlQuery, queryParams)
+.then(() => {
+  console.log('Post add success!')
+})
+.catch((error) => {
+  console.error('POST add new resource failed', error)
+})
+
 });
 
 module.exports = router;

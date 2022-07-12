@@ -16,10 +16,13 @@ function* fetchResource(){
 
 function* addNewResource(action){
 try{
-        const res = yield axios.post('/api/resource', action.payload)
-        yield put({
-            type:'FETCH_RESOURCES'
-        })
+        yield axios.post('/api/resource', action.payload)
+        .then(
+            yield put({
+                type:'FETCH_RESOURCES'
+            })
+        )
+       
     }
 catch(error){
         console.error('Failed to GET resources in sagas', error)

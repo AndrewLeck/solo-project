@@ -42,11 +42,37 @@ console.log('what POSTING?', queryParams)
 pool.query(sqlQuery, queryParams)
 .then(() => {
   console.log('Post add success!')
+ 
 })
 .catch((error) => {
   console.error('POST add new resource failed', error)
+  
 })
 
 });
+
+router.delete('/:id',(req, res) => {
+
+  
+ const sqlText =`
+ DELETE FROM resources
+ WHERE id = $1
+ `;
+
+const sqlParams = [
+req.params.id
+]
+console.log('delete params are:', sqlParams)
+
+pool.query(sqlText, sqlParams)
+.then(() => {
+  console.log('Delete sucess')
+})
+.catch((error) => {
+  console.log('Failed to delete', error)
+})
+
+
+})
 
 module.exports = router;

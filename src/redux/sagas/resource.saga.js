@@ -17,11 +17,11 @@ function* fetchResource(){
 function* addNewResource(action){
 try{
         yield axios.post('/api/resource', action.payload)
-        
+        .then(
             yield put({
                 type:'FETCH_RESOURCES'
             })
-        
+        )
        
     }
 catch(error){
@@ -33,9 +33,11 @@ function* deleteItemById(action){
     try{
         console.log('payload is', action.payload)
         yield axios.delete(`/api/resource/${action.payload}`)
-        yield put({
-            type:'FETCH_RESOURCES'
-        })
+        .then(
+            yield put({
+                type:'FETCH_RESOURCES'
+            })
+        )
     }
     catch(error){
         console.error('Failed to DELETE', error)

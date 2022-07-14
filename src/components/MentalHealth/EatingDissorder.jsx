@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import './EatingDissorder.css';
 import {useRef} from 'react';
 
+
 let editID;
 function EatingDissorder(){
 
@@ -145,11 +146,11 @@ function EatingDissorder(){
 })()
 }
 // This function will allow Admin to Delete item by id
-const  deleteRowById = (itemsToEdit) => {
+const  deleteRowById = (resourceId) => {
     
     // console.log('ref id is',ref.current.id);
     // setItemsToEdit(event.currentTarget.id)
-console.log('what is my delete', itemsToEdit)
+console.log('what is my delete', resourceId)
     Swal.fire({
         title: 'Are you you want to Delete',
         confirmButtonText: 'Yes, Continue',
@@ -157,12 +158,12 @@ console.log('what is my delete', itemsToEdit)
         showCancelButton: true,
         cancelButtonColor:'red',
         cancelButtonText: 'No, Cancel',
-        html: itemsToEdit,
+        html: resourceId,
     }).then((result, ) =>{
               if (result.isConfirmed){
                   dispatch({
                       type:'DELETE_ITEM_BY_ID',
-                      payload:itemsToEdit
+                      payload:resourceId
                   })
                   Swal.fire(
                       'Deleted!',
@@ -181,17 +182,21 @@ console.log('what is my delete', itemsToEdit)
     return(
         <>
          <h1>Eating Dissorder </h1>
-            <div>
-                <Link to="/EatingDissorder">
-                    <button>Eating Dissorder</button>
-                </Link>
-                <Link to="/Addiction">
-                    <button> Addiction</button>
-                </Link>
-                <Link to="/SuicideAndDepression">
-                    <button> Suicide & Depression</button>
-                </Link>
-            </div>
+         <div id='eatingDissorder'>
+                    <Link to="/EatingDissorder">
+                        <button className="tablink"  >Eating Dissorder</button>
+                    </Link>
+                </div>
+                <div id='Addiction'>
+                    <Link to="/Addiction">
+                        <button className="tablink" > Addiction</button>
+                    </Link>
+                </div>
+                <div id='SuicideAndDepression'>
+                    <Link to="/SuicideAndDepression">
+                        <button className="tablink"> Suicide & Depression</button>
+                    </Link>
+                </div>
             <div>
                 <button onClick={addNewResource}>Add New Resource </button>
             </div>
@@ -224,8 +229,8 @@ console.log('what is my delete', itemsToEdit)
                                    <button 
                                    id={resource.id} 
                                    onClick={() => {
-                                       setItemsToEdit(resource.id)
-                                       deleteRowById(itemsToEdit)
+                                    
+                                       deleteRowById(resource.id)
                                     }} > Delete </button>
                                </div>
                                <div>

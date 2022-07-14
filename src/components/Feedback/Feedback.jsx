@@ -26,7 +26,7 @@ const sendMessageToServer = (event) => {
 
     return(
         <>
-            <h1>Want us to add anything? Give us your suggestion down below.</h1>
+            <h1>Want us to add anything? Give us your suggestion down below</h1>
                 <form onSubmit={sendMessageToServer}>
                     <div className='textInput'>
                         <span>Name:</span>
@@ -53,14 +53,14 @@ const sendMessageToServer = (event) => {
                                  />
                             </p>
                         </div>
-                            <div>
+                            <div className='SubmitBtn'>
                                 <input 
                                 className='textInput'
                                 type="submit"
                                 />
                             </div>
                 </form>
-                            <div>
+                            <div className='GoHome'>
                                 <Link to="/user">
                                     <button>Go Home</button>
                                 </Link>

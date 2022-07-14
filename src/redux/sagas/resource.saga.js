@@ -2,12 +2,14 @@ import axios from 'axios';
 import { takeLatest, put } from 'redux-saga/effects';
 
 function* fetchResource(){
+    console.log('in fetch resource')
     try{
         const res = yield axios.get('/api/resource')
         yield put({
             type:'SET_RESOURCES',
             payload: res.data
         })
+        console.log('what is res.data', res.data)
     }
     catch(err){
         console.error('Failed to GET resources in sagas', err)
@@ -17,12 +19,11 @@ function* fetchResource(){
 function* addNewResource(action){
 try{
         yield axios.post('/api/resource', action.payload)
-        .then(
+        
             yield put({
                 type:'FETCH_RESOURCES'
             })
-        )
-       console.log('post?', action.payload)
+    
     }
 catch(error){
         console.error('Failed to GET resources in sagas', error)
@@ -30,14 +31,13 @@ catch(error){
 }
 
 function* deleteItemById(action){
+    console.log('Delete payload is', action.payload)
+
     try{
-        console.log('payload is', action.payload)
         yield axios.delete(`/api/resource/${action.payload}`)
-        .then(
             yield put({
                 type:'FETCH_RESOURCES'
             })
-        )
     }
     catch(error){
         console.error('Failed to DELETE', error)
@@ -45,7 +45,17 @@ function* deleteItemById(action){
 }
 
 function* updateDataRow(action){
-    console.log(action.payload)
+    console.log('Update payload is',action.payload.id)
+    
+    try{
+        yield axios.put(`/api/resource/${action.payload.id}`, action.payload)
+        yield put({
+            type:'FETCH_RESOURCES'
+        })
+    }
+    catch(error){
+        console.error('Failed to put(update) in sagas', error)
+    }
 }
 
 function* resourceSaga(){

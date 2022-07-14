@@ -42,7 +42,7 @@ console.log('what POSTING?', queryParams)
 pool.query(sqlQuery, queryParams)
 .then(() => {
   console.log('Post add success!')
- 
+  res.sendStatus(200)
 })
 .catch((error) => {
   console.error('POST add new resource failed', error)
@@ -67,6 +67,7 @@ console.log('delete params are:', sqlParams)
 pool.query(sqlText, sqlParams)
 .then(() => {
   console.log('Delete sucess')
+  res.sendStatus(200)
 })
 .catch((error) => {
   console.log('Failed to delete', error)
@@ -75,4 +76,31 @@ pool.query(sqlText, sqlParams)
 
 })
 
+router.put('/:id', (req, res) => {
+  const sqlText = `
+  UPDATE resources
+	SET  name = $1, location = $2, phone = $3, link = $4
+	WHERE id = $5;
+  `;
+  
+  const sqlParams = [
+    req.body.name,
+    req.body.location,
+    req.body.phone,
+    req.body.link,
+    req.params.id
+  ]
+
+  console.log('I am updating:', sqlParams);
+
+  pool.query(sqlText, sqlParams)
+  .then(() => {
+    res.sendStatus(200)
+  })
+  .catch((error) => {
+    console.error('Failed to update database in server', error)
+    res.sendStatus(500)
+  })
+
+})
 module.exports = router;

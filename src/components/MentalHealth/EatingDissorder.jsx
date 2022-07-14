@@ -52,7 +52,6 @@ function EatingDissorder(){
             cancelButtonText: 'Cancel edit'
         }).then((result) => {
             if(result.isConfirmed){
-              setUpdatedValues(result.value)
               console.log(result.value)
               dispatch({
                   type:'UPDATE_DATA_ROW',
@@ -146,11 +145,11 @@ function EatingDissorder(){
 })()
 }
 // This function will allow Admin to Delete item by id
-const  deleteRowById = (event) => {
-    console.log('event id is', event.currentTarget);
+const  deleteRowById = (itemsToEdit) => {
+    
     // console.log('ref id is',ref.current.id);
-    setItemsToEdit(event.currentTarget.id)
-
+    // setItemsToEdit(event.currentTarget.id)
+console.log('what is my delete', itemsToEdit)
     Swal.fire({
         title: 'Are you you want to Delete',
         confirmButtonText: 'Yes, Continue',
@@ -158,8 +157,8 @@ const  deleteRowById = (event) => {
         showCancelButton: true,
         cancelButtonColor:'red',
         cancelButtonText: 'No, Cancel',
-        html: event.currentTarget.id,
-    }).then((result) =>{
+        html: itemsToEdit,
+    }).then((result, ) =>{
               if (result.isConfirmed){
                   dispatch({
                       type:'DELETE_ITEM_BY_ID',
@@ -222,7 +221,12 @@ const  deleteRowById = (event) => {
                                <div>
                                    Address: {resource.location} 
                                    <button id={resource.id}  onClick={() => makeAnEdit(resource)}> Edit </button>
-                                   <button id={resource.id} ref={ref} onClick={deleteRowById} > Delete </button>
+                                   <button 
+                                   id={resource.id} 
+                                   onClick={() => {
+                                       setItemsToEdit(resource.id)
+                                       deleteRowById(itemsToEdit)
+                                    }} > Delete </button>
                                </div>
                                <div>
                                     Phone: {resource.phone}

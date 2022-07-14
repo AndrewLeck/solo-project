@@ -20,6 +20,7 @@ VALUES
     pool.query(queryText, queryParams)
     .then(() =>{
         console.log('Post success!')
+        res.sendStatus(200)
     })
     .catch((err) => {
         console.log('Post failed:', err)

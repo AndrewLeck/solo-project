@@ -5,6 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import Swal from 'sweetalert2';
 import './EatingDissorder.css';
 import {useRef} from 'react';
+
 let editID;
 function EatingDissorder(){
 
@@ -12,6 +13,7 @@ function EatingDissorder(){
  const dispatch = useDispatch();
  const [itemsToEdit, setItemsToEdit] = useState()
  const ref = useRef(null);
+ const [ updatedValues, setUpdatedValues] = useState('')
  
  // on page load run this action call (FETCH_RESOURCES)
  useEffect(() =>{
@@ -20,70 +22,44 @@ function EatingDissorder(){
     })
   },[])
 
-  const makeAnEdit = () => {
-    //   console.log('resource id is:', resources[0].id, '1')
-    // if( resources ){
-    //    for(let i=0; i<resources.length; i++){
-    //        if(resources[i].location === '2265 Como Ave, St Paul, MN 55108'){
-    //         //    console.log('did we get here?')
-    //            setItemsToEdit(resources[0].location)
-    //            console.log('did it set the right value:', itemsToEdit)
-    //        }
-    //        else if(resources[i].location === '310 Clifton Ave, Minneapolis, MN 55403'){
-    //            setItemsToEdit(resources[1].location)
-    //            console.log('did it work?', itemsToEdit)
-    //        }
-    //        return;
-    //    }
-    // }
-
-
-   
-    // if(resources[3].id === 4 ){
-    //     setItemsToEdit(resources[3].location)
-    //     console.log('what is item', itemsToEdit)
-    // }
-    // else if(resources[2].id === 3){
-    //     setItemsToEdit(resources[2].location)
-    //     console.log('What is item', itemsToEdit)
-    // }
-    // else if(resources[1].id === 2){
-    //     setItemsToEdit(resources[1].location)
-    //     console.log('What is item', itemsToEdit)
-    // } 
-    // else if(resources[0].id === 1){
-    //     setItemsToEdit(resources[0].location)
-    //     console.log('What is item', itemsToEdit)
-    // }
+  // This fucntion will allow the Admin to make an edit to the specific row of resources
+  const makeAnEdit = (resource) => {
     
-
-
-
-      
   
+    console.log('my data is:', resource);
+      
+        Swal.fire({
+            title: 'Edit this Row',
+            html:
+            `<input id="swal-input1" class="swal2-input" value='${resource.name}'>` +
+            `<input id="swal-input2" class="swal2-input" value='${resource.location}'>` +
+            `<input id="swal-input3" class="swal2-input" value='${resource.phone}'>` +
+            `<input id="swal-input4" class="swal2-input" value='${resource.link}'>`,
+            preConfirm: () =>{
+                return {
+                    id:resource.id,
+                    name: document.getElementById('swal-input1').value,
+                    location: document.getElementById('swal-input2').value,
+                    phone: document.getElementById('swal-input3').value,
+                    link: document.getElementById('swal-input4').value
+                 }
+            },
 
-      Swal.fire({
-        title: 'Edit this Row',
-        html:`{for(let i=0; i<resources.length; i++){`+
-        `<input id="swal-input1" class="swal2-input" value='${resources[i].name}'>` +
-        `<input id="swal-input2" class="swal2-input" value='${resources[i].location}'>` +
-        `<input id="swal-input3" class="swal2-input" value='${resources[i].phone}'>` +
-        `<input id="swal-input4" class="swal2-input" value='${resources[i].link}'>`,
-        preConfirm: () =>{
-            return [
-                document.getElementById('swal-input1').value,
-                document.getElementById('swal-input2').value,
-                document.getElementById('swal-input3').value,
-                document.getElementById('swal-input4').value
-              ]
-        },
-
-        confirmButtonText: 'Save Changes',
-        confirmButtonColor:'green',
-        showCancelButton: true,
-        cancelButtonColor:'red',
-        cancelButtonText: 'Cancel edit'
-      }).then
+            confirmButtonText: 'Save Changes',
+            confirmButtonColor:'green',
+            showCancelButton: true,
+            cancelButtonColor:'red',
+            cancelButtonText: 'Cancel edit'
+        }).then((result) => {
+            if(result.isConfirmed){
+              setUpdatedValues(result.value)
+              console.log(result.value)
+              dispatch({
+                  type:'UPDATE_DATA_ROW',
+                  payload: result.value
+              })
+            }
+        })
         
   }
 
@@ -245,7 +221,7 @@ const  deleteRowById = (event) => {
                             <li key={resource.id}>
                                <div>
                                    Address: {resource.location} 
-                                   <button onClick={makeAnEdit}> Edit </button>
+                                   <button id={resource.id}  onClick={() => makeAnEdit(resource)}> Edit </button>
                                    <button id={resource.id} ref={ref} onClick={deleteRowById} > Delete </button>
                                </div>
                                <div>

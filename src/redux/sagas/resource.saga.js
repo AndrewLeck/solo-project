@@ -22,7 +22,7 @@ try{
                 type:'FETCH_RESOURCES'
             })
         )
-       
+       console.log('post?', action.payload)
     }
 catch(error){
         console.error('Failed to GET resources in sagas', error)
@@ -44,10 +44,15 @@ function* deleteItemById(action){
     }
 }
 
+function* updateDataRow(action){
+    console.log(action.payload)
+}
+
 function* resourceSaga(){
     yield takeLatest('FETCH_RESOURCES', fetchResource); 
     yield takeLatest('ADD_NEW_RESOURCES', addNewResource);
-    yield takeLatest('DELETE_ITEM_BY_ID', deleteItemById) 
+    yield takeLatest('DELETE_ITEM_BY_ID', deleteItemById);
+    yield takeLatest('UPDATE_DATA_ROW', updateDataRow);
 }
 
 export default resourceSaga;

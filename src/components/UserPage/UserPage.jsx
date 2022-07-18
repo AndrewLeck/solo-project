@@ -15,8 +15,8 @@ function UserPage() {
 
       {/* <p>Your ID is: {user.id}</p> */}
       <div>
-          <title> Fact of the day </title>
-          <p>(API end point will go here to generate a random fact per day)</p>
+          {/* <title> Fact of the day </title> */}
+          {/* <p>(API end point will go here to generate a random fact per day)</p> */}
       </div>
       <div>
           <Link to="/Feedback">

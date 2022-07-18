@@ -200,8 +200,13 @@ console.log('what is my delete', resourceId)
             <div>
                 <button onClick={addNewResource}>Add New Resource </button>
             </div>
+            <container className='center'> 
             <div>
-                <header> Name </header>
+                <header className='titleName'>
+                    <h2>
+                        Name
+                    </h2>
+                </header>
               <ul>
                   {resources.map((resource) => {
                       if( resource.sub_category_id === 1){
@@ -217,13 +222,13 @@ console.log('what is my delete', resourceId)
               </ul>
             </div>
             <div>
-            <header>Additional Resources</header>
+            <header className='titleName' >Additional Resources</header>
               <ul>
                  {resources.map((resource) => {
                      if( resource.sub_category_id === 1){
                         return(
                             <li key={resource.id}>
-                               <div>
+                               <div className='itemList'>
                                    Address: {resource.location} 
                                    <button id={resource.id}  onClick={() => makeAnEdit(resource)}> Edit </button>
                                    <button 
@@ -247,6 +252,7 @@ console.log('what is my delete', resourceId)
                   
               </ul>
             </div>
+            </container>
             <div>
                 <Link to='/MentalHealth'>
                     <button>Go Back</button>

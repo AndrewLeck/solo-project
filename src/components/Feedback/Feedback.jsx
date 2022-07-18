@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
 import './Feedback.css'
+import Swal from 'sweetalert2';
 function Feedback(){
 
 const [email, setEmail] = useState('');
@@ -23,6 +24,14 @@ const sendMessageToServer = (event) => {
     //This will clear the input fields on submit of the form( but it does not work yet need to fix later)
     event.target.reset();
 };
+
+const thanksForFeedBack = () =>{
+  Swal.fire(
+    'Success!',
+    'Thanks for the feedback :)',
+    'success'
+  )  
+}
 
     return(
         <>
@@ -55,6 +64,7 @@ const sendMessageToServer = (event) => {
                         </div>
                             <div className='SubmitBtn'>
                                 <input 
+                                onClick={thanksForFeedBack}
                                 className='textInput'
                                 type="submit"
                                 />

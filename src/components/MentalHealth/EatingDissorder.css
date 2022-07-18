@@ -17,3 +17,18 @@ body {
   .tablink:hover {
     background-color: #777;
   }
+  
+
+  .center{
+    display: inline-flex;
+    padding: 3px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+/* .titleName{
+  
+} */

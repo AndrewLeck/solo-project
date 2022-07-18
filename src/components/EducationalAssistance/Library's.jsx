@@ -19,15 +19,16 @@ function Library(){
          <h1>Library's</h1>
                 <div>
                     <Link to="/Library">
-                        <button> Library's </button>
+                        <button className="tablink"> Library's </button>
                     </Link>
                     <Link to="/PublicSchools">
-                        <button> Public Schools </button>
+                        <button className="tablink"> Public Schools </button>
                     </Link>
                     <Link to="/TutoringServices">
-                        <button> Tutoring Services</button>
+                        <button className="tablink"> Tutoring Services</button>
                     </Link>
                 </div>
+            <container className='center'> 
             <div>
                 <header> Name </header>
               <ul>
@@ -64,6 +65,7 @@ function Library(){
                  })}
               </ul>
             </div>
+            </container>
             <div>
                 <Link to="/EducationalAssistance">
                     <button>Go Back</button>

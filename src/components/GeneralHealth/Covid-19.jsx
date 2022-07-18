@@ -19,15 +19,16 @@ function Covid(){
          <h1>Covid-19</h1>
                 <div>
                     <Link to="/DrAndHospital">
-                        <button> Dr./Hospital </button>
+                        <button className="tablink"> Dr./Hospital </button>
                     </Link>
                     <Link to="/SexualEducation">
-                        <button> Sexual Education </button>
+                        <button className="tablink"> Sexual Education </button>
                     </Link>
                     <Link to="/Covid-19">
-                        <button> Covid-19</button>
+                        <button className="tablink"> Covid-19</button>
                     </Link>
                 </div>
+                <container className='center'> 
             <div>
                 <header> Name </header>
               <ul>
@@ -64,6 +65,7 @@ function Covid(){
                  })}
               </ul>
             </div>
+            </container>
             <div>
                 <Link to="/GeneralHealth">
                     <button>Go Back</button>

@@ -17,15 +17,17 @@ function GeneralHealth(){
         <h1>{category[3] && category[3].name}</h1>
                 <div>
                     <Link to="/DrAndHospital">
-                        <button> Dr./Hospital </button>
+                        <button className="tablink"> Dr./Hospital </button>
                     </Link>
                     <Link to="/SexualEducation">
-                        <button> Sexual Education </button>
+                        <button className="tablink"> Sexual Education </button>
                     </Link>
                     <Link to="/Covid-19">
-                        <button> Covid-19</button>
+                        <button className="tablink"> Covid-19</button>
                     </Link>
                 </div>
+                <br></br>
+                <br></br>
             <div>
                 <p>
                     {category[3] && category[3].home_page_content}

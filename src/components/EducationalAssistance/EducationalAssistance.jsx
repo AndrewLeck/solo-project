@@ -18,15 +18,17 @@ function EducationalAssistance(){
         <h1>{category[2] && category[2].name}</h1>
                 <div>
                     <Link to="/Library">
-                        <button> Library's </button>
+                        <button className="tablink"> Library's </button>
                     </Link>
                     <Link to="/PublicSchools">
-                        <button> Public Schools </button>
+                        <button className="tablink"> Public Schools </button>
                     </Link>
                     <Link to="/TutoringServices">
-                        <button> Tutoring Services</button>
+                        <button className="tablink"> Tutoring Services</button>
                     </Link>
                 </div>
+                <br></br>
+                <br></br>
             <div>
                 <p>
                     {category[2] && category[2].home_page_content}

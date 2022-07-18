@@ -21,7 +21,7 @@ function MentalHealth(){
     return(
         <>
          <h1> {category[0] && category[0].name} </h1>
-         <container>
+         <container className='subHeader'>
                 <div id='eatingDissorder'>
                     <Link to="/EatingDissorder">
                         <button className="tablink"  >Eating Dissorder</button>

@@ -15,19 +15,23 @@ function GeneralHealth(){
     return(
         <>
         <h1>{category[3] && category[3].name}</h1>
+        <div class="subHeader">
                 <div>
                     <Link to="/DrAndHospital">
                         <button className="tablink"> Dr./Hospital </button>
                     </Link>
+                </div>
+                <div>
                     <Link to="/SexualEducation">
                         <button className="tablink"> Sexual Education </button>
                     </Link>
+                </div>
+                <div>
                     <Link to="/Covid-19">
                         <button className="tablink"> Covid-19</button>
                     </Link>
                 </div>
-                <br></br>
-                <br></br>
+        </div>
             <div>
                 <p>
                     {category[3] && category[3].home_page_content}

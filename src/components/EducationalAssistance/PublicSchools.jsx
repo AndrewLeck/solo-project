@@ -17,17 +17,23 @@ function PublicSchools(){
     return(
         <>
          <h1>Public Schools</h1>
+         <div class="subHeader">
                 <div>
                     <Link to="/Library">
                         <button className="tablink"> Library's </button>
                     </Link>
+                </div>
+                <div>
                     <Link to="/PublicSchools">
                         <button className="tablink"> Public Schools </button>
                     </Link>
+                </div>
+                <div>
                     <Link to="/TutoringServices">
                         <button className="tablink"> Tutoring Services</button>
                     </Link>
                 </div>
+            </div>
             <container className='center'> 
             <div>
                 <header> Name </header>

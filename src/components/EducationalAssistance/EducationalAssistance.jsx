@@ -14,21 +14,24 @@ function EducationalAssistance(){
     
     return(
         <>
-
         <h1>{category[2] && category[2].name}</h1>
+        <div class="subHeader">
                 <div>
                     <Link to="/Library">
                         <button className="tablink"> Library's </button>
                     </Link>
+                </div>
+                <div>
                     <Link to="/PublicSchools">
                         <button className="tablink"> Public Schools </button>
                     </Link>
+                </div>
+                <div>
                     <Link to="/TutoringServices">
                         <button className="tablink"> Tutoring Services</button>
                     </Link>
                 </div>
-                <br></br>
-                <br></br>
+        </div>
             <div>
                 <p>
                     {category[2] && category[2].home_page_content}

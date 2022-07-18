@@ -37,23 +37,17 @@ function MentalHealth(){
                         <button className="tablink"> Suicide & Depression</button>
                     </Link>
                 </div>
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
-            <div id='defaultOpen'>
-                <p>
-                {category[0] && category[0].home_page_content}
-                </p>
-            </div>
-            </div>
-            <div>
-                <Link to="/user">
-                    <button>Go home</button>
-                </Link>
-            </div>
+        </div>
+        <div id='defaultOpen'>
+            <p>
+            {category[0] && category[0].home_page_content}
+            </p>
+        </div>
+        <div>
+            <Link to="/user">
+                <button>Go home</button>
+            </Link>
+        </div>
         </>
     )
 }

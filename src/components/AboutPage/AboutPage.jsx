@@ -13,13 +13,20 @@ function AboutPage() {
         <p> Resourceful was created to help provide equal oppourtunities for all </p>
         <h3>Technology Used</h3>
           <ul>
+            <li>Javascript</li>
             <li>React.js</li>
             <li>Node.js</li>
             <li>Express</li>
+            <li>Ajax</li>
+            <li>Sweet Alert 2</li>
             <li>CSS</li>
             <li>PsostreSQL</li>
             <li>Postico</li>
           </ul>
+          <div>
+            <h3> What's Next </h3>
+            Going to implement google places api to allow people to search for any place.
+          </div>
         <div> 
           <h3>Thanks</h3>
           <ul>

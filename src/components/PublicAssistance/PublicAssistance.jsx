@@ -14,17 +14,23 @@ function PublicAssistance(){
     return(
         <>
             <h1> {category[1] && category[1].name} </h1>
+            <div class="subHeader">
                 <div>
                     <Link to="/FoodShelves">
-                        <button> Food Shelves </button>
-                    </Link>
-                    <Link to="/HomelessShelters">
-                        <button> Homeless Shelters </button>
-                    </Link>
-                    <Link to="/ClothingOptions">
-                        <button> Clothing Options </button>
+                        <button class="tabLink"> Food Shelves </button>
                     </Link>
                 </div>
+                <div>
+                    <Link to="/HomelessShelters">
+                        <button class="tabLink"> Homeless Shelters </button>
+                    </Link>
+                </div>
+                <div>
+                    <Link to="/ClothingOptions">
+                        <button class="tabLink"> Clothing Options </button>
+                    </Link>
+                </div>
+            </div>
             <div>
                 <p>
                 {category[1] && category[1].home_page_content}

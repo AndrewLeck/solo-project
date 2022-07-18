@@ -110,3 +110,10 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+
+.subHeader {
+  display: flex;
+  justify-content: space-around;
+  background: #555555;
+}

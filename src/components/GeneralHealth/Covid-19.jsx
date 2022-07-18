@@ -17,16 +17,22 @@ function Covid(){
     return(
         <>
          <h1>Covid-19</h1>
-                <div>
+                <div class="subHeader">
+                    <div>
                     <Link to="/DrAndHospital">
                         <button className="tablink"> Dr./Hospital </button>
                     </Link>
+                    </div>
+                    <div>
                     <Link to="/SexualEducation">
                         <button className="tablink"> Sexual Education </button>
                     </Link>
+                    </div>
+                    <div>
                     <Link to="/Covid-19">
                         <button className="tablink"> Covid-19</button>
                     </Link>
+                    </div>
                 </div>
                 <container className='center'> 
             <div>

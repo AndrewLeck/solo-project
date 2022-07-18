@@ -24,7 +24,7 @@ function UserPage() {
           </Link>
       </div>
       
-      <LogOutButton className="btn" />
+      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }

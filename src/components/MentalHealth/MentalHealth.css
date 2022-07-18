@@ -1,6 +1,6 @@
 .tablink {
-    background-color: #555;
-    color: white;
+    background-color: #94553D;
+    color: #94553D;
     float: left;
     border: none;
     outline: none;
@@ -11,12 +11,16 @@
   }
 
   .tablink:hover {
-    background-color: #777;
+    background-color: #94553D;
   }
 
   .tabcontent {
-    color: white;
+    color: #94553D;
     display: none;
     padding: 50px;
     text-align: center;
+  }
+  
+  .container{
+   align-items: center;
   }

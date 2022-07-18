@@ -7,7 +7,7 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="container">
+    <div className="containerAbout">
       <h1> About Page </h1>
       <div>
         <p> Resourceful was created to help provide equal oppourtunities for all </p>
@@ -20,7 +20,7 @@ function AboutPage() {
             <li>PsostreSQL</li>
             <li>Postico</li>
           </ul>
-        <p> 
+        <div> 
           <h3>Thanks</h3>
           <ul>
             <li>Friends and Family</li>
@@ -28,7 +28,7 @@ function AboutPage() {
             <li>Instrcutor Edan Schwartz</li>
           </ul>
 
-        </p>
+        </div>
         <div>
         <img src='https://media-exp1.licdn.com/dms/image/C5603AQEbj4UrmjxoKg/profile-displayphoto-shrink_200_200/0/1652586735572?e=1663200000&v=beta&t=VcNMmVxI3gfAwmz2eWTYqZssBM8QWElxGVaH4SuQq4A' target="_blank"/>
         </div>

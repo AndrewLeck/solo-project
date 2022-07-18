@@ -21,7 +21,7 @@ function MentalHealth(){
     return(
         <>
          <h1> {category[0] && category[0].name} </h1>
-         <container className='subHeader'>
+         <div className='subHeader'>
                 <div id='eatingDissorder'>
                     <Link to="/EatingDissorder">
                         <button className="tablink"  >Eating Dissorder</button>
@@ -41,12 +41,14 @@ function MentalHealth(){
             </br>
             <br>
             </br>
+            <br>
+            </br>
             <div id='defaultOpen'>
                 <p>
                 {category[0] && category[0].home_page_content}
                 </p>
             </div>
-            </container>
+            </div>
             <div>
                 <Link to="/user">
                     <button>Go home</button>

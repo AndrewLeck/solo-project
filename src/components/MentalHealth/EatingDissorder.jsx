@@ -203,9 +203,9 @@ console.log('what is my delete', resourceId)
             <container className='center'> 
             <div>
                 <header className='titleName'>
-                    <h2>
+                    <h3>
                         Name
-                    </h2>
+                    </h3>
                 </header>
               <ul>
                   {resources.map((resource) => {
@@ -222,7 +222,11 @@ console.log('what is my delete', resourceId)
               </ul>
             </div>
             <div>
-            <header className='titleName' >Additional Resources</header>
+            <header className='titleName' >
+                <h3>
+                    Additional Resources
+                </h3>
+                </header>
               <ul>
                  {resources.map((resource) => {
                      if( resource.sub_category_id === 1){

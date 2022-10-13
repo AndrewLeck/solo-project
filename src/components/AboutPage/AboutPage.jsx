@@ -16,12 +16,14 @@ function AboutPage() {
             <li>Javascript</li>
             <li>React.js</li>
             <li>Node.js</li>
+            <li>Redux</li>
             <li>Express</li>
             <li>Ajax</li>
             <li>Sweet Alert 2</li>
             <li>CSS</li>
             <li>PsostreSQL</li>
             <li>Postico</li>
+            
           </ul>
           <div>
             <h3> What's Next </h3>
@@ -46,3 +48,8 @@ function AboutPage() {
 }
 
 export default AboutPage;
+
+
+
+
+

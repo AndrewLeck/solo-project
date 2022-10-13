@@ -4,20 +4,19 @@ import {useSelector, useDispatch} from 'react-redux';
 import './MentalHealth.css';
 
 
+// This function displays the mental health category information
 function MentalHealth(){
     const category = useSelector((store) => store.categoryContent);
     const dispatch = useDispatch();
 
+// On page load this useEffect will dispatch and fetch the mental Health Content for this page.
   useEffect(() =>{
     dispatch({
         type: "FETCH_CATEGORY_CONTENT"
     })
   },[])
     
-
-  
-
-
+  // Everything below in the return is being rendered to the DOM.
     return(
         <>
          <h1> {category[0] && category[0].name} </h1>
@@ -45,7 +44,7 @@ function MentalHealth(){
         </div>
         <div>
             <Link to="/user">
-                <button>Go home</button>
+                <button>Go home</button> 
             </Link>
         </div>
         </>

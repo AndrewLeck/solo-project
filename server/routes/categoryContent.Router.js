@@ -2,7 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-
+// THis route allows me to fetch the data fro the CategoryId table( Mental Health, Public Assistance, Educational Assistance, General Health)
 router.get('/', (req, res) => {
     
   const queryText=`
@@ -18,13 +18,6 @@ router.get('/', (req, res) => {
       console.log('Failed to GET the data', err)
       res.sendStatus(500);
   })
-});
-
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
-  // POST route code here
 });
 
 module.exports = router;

@@ -5,6 +5,7 @@ const router = express.Router();
 /**
  * GET route 
  */
+// This is my GET route that allows me to fetch all the data from the "resources table"
 router.get('/', (req, res) => {
   const queryText=`
   SELECT * FROM "resources";
@@ -21,6 +22,7 @@ router.get('/', (req, res) => {
 
 });
 
+// This is my post route, that allows me (admin) to add a new resource to the database and the DOM
 router.post('/', (req, res) => {
   const sqlQuery = `
 INSERT INTO "resources" 
@@ -51,6 +53,7 @@ pool.query(sqlQuery, queryParams)
 
 });
 
+// This is my delete route that allows me (Admin) to Delete resources from the DOM and Database
 router.delete('/:id',(req, res) => {
 
   
@@ -76,6 +79,7 @@ pool.query(sqlText, sqlParams)
 
 })
 
+//This is my Put route that allows me (Admin) to update resources from the DOM and save it to the database
 router.put('/:id', (req, res) => {
   const sqlText = `
   UPDATE resources
